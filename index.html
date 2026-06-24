@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniel — Data Science Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <span class="logo">daniel<span class="cursor">_</span></span>
+      <nav>
+        <a href="#projects">projects</a>
+        <a href="#skills">skills</a>
+        <a href="#about">about</a>
+        <a href="#contact">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">B.Sc. Data Science — University of Melbourne</p>
+      <h1>Daniel Tan</h1>
+      <div class="repl">
+        <span class="prompt">&gt;&gt;&gt;</span>
+        <span class="typed" id="typed"></span><span class="cursor blink">_</span>
+      </div>
+      <p class="hero-sub">
+        Building models, breaking down markets, and learning how data turns into decisions —
+        with one eye on trading floors and the other on Jupyter notebooks.
+      </p>
+      <div class="hero-links">
+        <a class="btn btn-primary" href="#projects">View projects</a>
+        <a class="btn btn-ghost" href="mailto:youremail@example.com">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap about-grid">
+      <div class="about-label">
+        <span class="tag">01</span>
+        <h2>About</h2>
+      </div>
+      <div class="about-body">
+        <p>
+          I'm a first-year Data Science student at the University of Melbourne with a
+          particular pull toward quantitative finance and trading. I like problems where
+          a model's output has a real, measurable consequence — a flagged churn risk,
+          a mispriced trade, a signal worth acting on.
+        </p>
+        <p>
+          Recently I've been competing in trading and case-study competitions
+          (Optiver Trad-a-thon, university hackathons) alongside building out a
+          portfolio of end-to-end data science projects — from raw CSV to a
+          deployed, interactive demo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">02</span>
+        <h2>Projects</h2>
+      </div>
+
+      <article class="project">
+        <div class="project-main">
+          <h3>Telco Customer Churn Prediction</h3>
+          <p class="project-desc">
+            End-to-end classification pipeline on the Kaggle Telco dataset — cleaning,
+            EDA, encoding, and model comparison to predict which customers are likely to churn.
+          </p>
+          <ul class="project-points">
+            <li>Cleaned and explored ~7,000 customer records; handled categorical encoding with <code>get_dummies(drop_first=True)</code></li>
+            <li>Stratified train/test split with <code>StandardScaler</code> normalization</li>
+            <li>Compared Logistic Regression against Random Forest as a baseline</li>
+          </ul>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener">GitHub repo →</a>
+            <a href="#" target="_blank" rel="noopener">Live demo →</a>
+          </div>
+        </div>
+        <div class="project-stats">
+          <div class="stat">
+            <span class="stat-value">80.4%</span>
+            <span class="stat-label">accuracy (LogReg)</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">61%</span>
+            <span class="stat-label">F1 score</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">78.8%</span>
+            <span class="stat-label">accuracy (Rand. Forest)</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project-placeholder">
+        <div class="project-main">
+          <h3>Your next project</h3>
+          <p class="project-desc">
+            Add your next analysis, competition writeup, or model here — same structure,
+            new stats block on the right.
+          </p>
+          <div class="project-links">
+            <a href="#">GitHub repo →</a>
+          </div>
+        </div>
+        <div class="project-stats">
+          <div class="stat">
+            <span class="stat-value">—</span>
+            <span class="stat-label">metric</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">03</span>
+        <h2>Skills</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Languages</h4>
+          <div class="pills">
+            <span class="pill">Python</span>
+            <span class="pill">R</span>
+            <span class="pill">SQL</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Libraries</h4>
+          <div class="pills">
+            <span class="pill">pandas</span>
+            <span class="pill">scikit-learn</span>
+            <span class="pill">NumPy</span>
+            <span class="pill">matplotlib</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Tools</h4>
+          <div class="pills">
+            <span class="pill">Jupyter</span>
+            <span class="pill">Git / GitHub</span>
+            <span class="pill">Streamlit</span>
+            <span class="pill">Posit Cloud</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <h2>Let's talk</h2>
+        <p>Open to internships, case competitions, and anything data-or-markets shaped.</p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:youremail@example.com">youremail@example.com</a>
+        <a href="#" target="_blank" rel="noopener">GitHub</a>
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
