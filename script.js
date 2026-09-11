@@ -187,10 +187,17 @@
   // Gallery / lightbox
   const lightbox = q("#lightbox");
   const lightboxImg = q("#lightboxImg");
-  const galleryImages = qa(".gallery-item img").map((img) => ({
-    src: img.getAttribute("src"),
-    alt: img.getAttribute("alt") || "",
-  }));
+  const galleryImages = qa(".gallery-item img").map((img) => {
+    let src = img.getAttribute("src") || "";
+    if (/\.jpg$/i.test(src)) {
+      src = src.replace(/\.jpg$/i, ".webp");
+      img.setAttribute("src", src);
+    }
+    return {
+      src,
+      alt: img.getAttribute("alt") || "",
+    };
+  });
   let lightboxIndex = 0;
 
   function renderLightbox() {
