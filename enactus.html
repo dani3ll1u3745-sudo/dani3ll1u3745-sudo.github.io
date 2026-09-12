@@ -87,18 +87,20 @@
           <div class="feature-item">
             <div class="feature-number">01</div>
             <div class="feature-content">
-              <h3>9News article integration</h3>
-              <p>Added a dedicated 9News panel to the project page, including contextual text, an article quote, and a direct link to the coverage of EnAccess Maps.</p>
+              <h3>Including link to 9News article</h3>
+              <p>Added a dedicated 9News panel to the project page with contextual text, a quote from the coverage, and a direct link to the article/video feature.</p>
+              <p>The panel highlights the project's focus on making accessibility information easier to discover and use when choosing venues.</p>
             </div>
           </div>
 
           <div class="feature-item">
             <div class="feature-number">02</div>
             <div class="feature-content">
-              <h3>Photo uploads up to 20 + multiple labels</h3>
-              <p>Updated the photo upload flow to support up to 20 photos and multiple accessibility labels, including the configurable upload limit and changes across the caption and review upload components.</p>
-              <p><strong>Post-update:</strong> Users can now upload up to 20 photos and select multiple labels. Selecting “Other” deselects all other labels so no other labels are shown. The first selected label is currently displayed, so selecting “moderate noise” and “no step-free entry” will display “moderate noise” in the current view.</p>
-              <p><strong>Next steps:</strong> Show all selected labels when opening photos, add photos to full access details, prevent contradictory label combinations, and add per-photo comments on the backend without displaying them yet.</p>
+              <h3>Update photo limit to 20 + multiple labels</h3>
+              <p>Fixed the photo upload flow in <code>caption-photo-step.tsx</code> and updated the relevant review flow in <code>Review-photo-upload.tsx</code>.</p>
+              <p><strong>Implementation:</strong> Made the photo limit configurable, updated the UI so the new limit is reflected correctly, and added support for selecting multiple accessibility labels.</p>
+              <p><strong>Post-update:</strong> Users can now upload up to 20 photos and add multiple labels. Selecting “Other” deselects all other labels and prevents any other labels from being shown. The first selected label is currently displayed — for example, if “moderate noise” and “no step-free entry” are selected, “moderate noise” is shown.</p>
+              <p><strong>Next steps:</strong> Show all selected labels when opening photos, add photos to full access details, prevent selecting contradictory labels, and add comments for each photo on the backend without displaying them yet.</p>
             </div>
           </div>
 
