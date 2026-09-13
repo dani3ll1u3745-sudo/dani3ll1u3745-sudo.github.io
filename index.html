@@ -14,13 +14,13 @@
       <nav>
         <a href="#projects">projects</a>
         <a href="#skills">skills</a>
-        <a href="#about">about</a>
         <a href="photos.html">photos</a>
+        <a href="#about">about</a>
         <a href="#contact">contact</a>
       </nav>
       <div class="header-controls">
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle dark/light mode">
-          <span class="theme-icon">◐</span>
+          <span class="theme-icon">☀</span>
         </button>
       </div>
     </div>
@@ -32,59 +32,30 @@
       <p class="eyebrow">B.Sc. Data Science — University of Melbourne</p>
       <h1>Daniel Liu Jia Xuan</h1>
       <p class="hero-tagline">Motivated by my curiosity for all things tech</p>
-      <p class="hero-sub">
-        Currently balancing life as a University student, life as an 18 year old living in another state, and
-        learning everyday through building
-      </p>
+      <p class="hero-sub">Currently balancing life as a University student, life as an 18 year old living in another state, and learning everyday through building</p>
       <div class="hero-links">
         <a class="btn btn-primary" href="#projects">View projects</a>
         <a class="btn btn-ghost" href="resume.pdf" download>Download resume</a>
         <a class="btn btn-ghost" href="mailto:daniel.liujiaxuan@student.unimelb.edu.au">Get in touch</a>
       </div>
-
       <div class="hero-widgets">
-        <div class="widget" id="locationWidget">
-          <span class="widget-icon">◎</span>
-          <span class="widget-text" id="locationText">Locating…</span>
-        </div>
-        <div class="widget">
-          <span class="widget-icon">◷</span>
-          <span class="widget-text" id="clockText">--:-- --</span>
-        </div>
-        <div class="widget" id="ghWidget">
-          <span class="widget-icon">⌥</span>
-          <span class="widget-text" id="ghCommits">Loading commits…</span>
-        </div>
+        <div class="widget" id="locationWidget"><span class="widget-icon">◎</span><span class="widget-text" id="locationText">Locating…</span></div>
+        <div class="widget"><span class="widget-icon">◷</span><span class="widget-text" id="clockText">--:-- --</span></div>
+        <div class="widget" id="ghWidget"><span class="widget-icon">⌥</span><span class="widget-text" id="ghCommits">Loading commits…</span></div>
       </div>
     </div>
   </section>
 
   <section id="about" class="about">
     <div class="wrap about-grid">
-      <div class="about-label">
-        <span class="tag">01</span>
-        <h2>About</h2>
-      </div>
+      <div class="about-label"><span class="tag">01</span><h2>About</h2></div>
       <div class="about-body">
         <div class="about-content">
           <div class="about-text">
-            <p>
-              I'm a first-year Data Science student at the University of Melbourne driven
-              by my curiosity to learn something new every day. I like building and solving
-              problems I haven't attempted before and seeing the impact it could have in the
-              real-world. This website is dedicated to those on the same journey as me.
-            </p>
-            <p>
-              During my first semester, I placed 32nd out of 190+ teams in the Optiver
-              Trad-a-thon, took part in HackMelbourne and the Women in STEM Hackathon, and
-              completed Practera's Horizons Programme — alongside building out personal
-              projects like the churn prediction model below. I'm currently a software
-              developer at Enactus Melbourne working on EnAccess Maps.
-            </p>
+            <p>I'm a first-year Data Science student at the University of Melbourne driven by my curiosity to learn something new every day. I like building and solving problems I haven't attempted before and seeing the impact it could have in the real-world. This website is dedicated to those on the same journey as me.</p>
+            <p>During my first semester, I placed 32nd out of 190+ teams in the Optiver Trad-a-thon, took part in HackMelbourne and the Women in STEM Hackathon, and completed Practera's Horizons Programme — alongside building out personal projects like the churn prediction model below. I'm currently a software developer at Enactus Melbourne working on EnAccess Maps.</p>
           </div>
-          <div class="about-photo">
-            <img src="assets/images/daniel-profile.webp" alt="Daniel Liu Jia Xuan" loading="lazy">
-          </div>
+          <div class="about-photo"><img src="assets/images/daniel-profile.webp" alt="Daniel Liu Jia Xuan" loading="lazy"></div>
         </div>
       </div>
     </div>
@@ -92,30 +63,19 @@
 
   <section id="projects" class="projects">
     <div class="wrap">
-      <div class="section-head">
-        <span class="tag">02</span>
-        <h2>Projects</h2>
-      </div>
+      <div class="section-head"><span class="tag">02</span><h2>Projects</h2></div>
 
       <article class="project reveal">
         <div class="project-main">
-          <div class="project-title-row">
-            <h3>EnAccess Maps</h3>
-            <span class="project-badge">Active</span>
-          </div>
+          <div class="project-title-row"><h3>EnAccess Maps</h3><span class="project-badge">Active</span></div>
           <p class="project-org">Enactus Melbourne — Software Developer</p>
-          <p class="project-desc">
-            A web platform and developing mobile app to improve accessibility for people
-            with physical disabilities — built with Google Maps APIs, TypeScript, and React.
-          </p>
+          <p class="project-desc">A web platform and developing mobile app to improve accessibility for people with physical disabilities — built with Google Maps APIs, TypeScript, and React.</p>
           <ul class="project-points">
             <li>Integrated Google Maps APIs to deliver updated, consistent mapping features for accessibility data</li>
             <li>Built React UI components for the web platform front-end</li>
             <li>Contributing to the mobile app development phase and ideating new features to expand the project's scope</li>
           </ul>
-          <div class="project-links">
-            <a href="enaccess.html">Full feature breakdown →</a>
-          </div>
+          <div class="project-links"><a href="enaccess.html">Full feature breakdown →</a></div>
         </div>
         <div class="project-stats">
           <div class="stat"><span class="stat-value">React</span><span class="stat-label">front-end</span></div>
@@ -128,109 +88,43 @@
         <div class="project-main">
           <h3>Telco Customer Churn Prediction</h3>
           <p class="project-desc">End-to-end classification pipeline on the Kaggle Telco dataset — cleaning, EDA, encoding, and model comparison to predict which customers are likely to churn.</p>
-          <ul class="project-points">
-            <li>Cleaned and explored ~7,000 customer records; handled categorical encoding with <code>get_dummies(drop_first=True)</code></li>
-            <li>Stratified train/test split with <code>StandardScaler</code> normalization</li>
-            <li>Compared Logistic Regression against Random Forest as a baseline</li>
-          </ul>
+          <ul class="project-points"><li>Cleaned and explored ~7,000 customer records; handled categorical encoding with <code>get_dummies(drop_first=True)</code></li><li>Stratified train/test split with <code>StandardScaler</code> normalization</li><li>Compared Logistic Regression against Random Forest as a baseline</li></ul>
           <div class="project-links"><a href="https://github.com/dani3ll1u3745-sudo/Customer-churn-predictor" target="_blank" rel="noopener">GitHub repo →</a></div>
         </div>
-        <div class="project-stats">
-          <div class="stat"><span class="stat-value">80.4%</span><span class="stat-label">accuracy (LogReg)</span></div>
-          <div class="stat"><span class="stat-value">61%</span><span class="stat-label">F1 score</span></div>
-          <div class="stat"><span class="stat-value">78.8%</span><span class="stat-label">accuracy (Rand. Forest)</span></div>
-        </div>
+        <div class="project-stats"><div class="stat"><span class="stat-value">80.4%</span><span class="stat-label">accuracy (LogReg)</span></div><div class="stat"><span class="stat-value">61%</span><span class="stat-label">F1 score</span></div><div class="stat"><span class="stat-value">78.8%</span><span class="stat-label">accuracy (Rand. Forest)</span></div></div>
       </article>
 
       <article class="project reveal">
-        <div class="project-main">
-          <h3>Practera Horizons — HBTA Growth Strategy</h3>
-          <p class="project-desc">A real-world consulting project through Practera's Horizons Programme, working as part of a student team to develop a growth strategy for Healthy Business Training Academy (HBTA), an Australian private RTO.</p>
-          <ul class="project-points">
-            <li>Analysed the Australian VET sector and the impact of Fee-Free TAFE on private RTO enrolment and competitive positioning</li>
-            <li>Conducted competitor analysis across 3 RTOs to map HBTA's market gap</li>
-            <li>Recommended a B2B niche strategy targeting SME (small and medium enterprise) workforce upskilling as the highest-viability growth path</li>
-          </ul>
-        </div>
-        <div class="project-stats">
-          <div class="stat"><span class="stat-value">3</span><span class="stat-label">competitors mapped</span></div>
-          <div class="stat"><span class="stat-value">2</span><span class="stat-label">deliverables</span></div>
-        </div>
+        <div class="project-main"><h3>Practera Horizons — HBTA Growth Strategy</h3><p class="project-desc">A real-world consulting project through Practera's Horizons Programme, working as part of a student team to develop a growth strategy for Healthy Business Training Academy (HBTA), an Australian private RTO.</p><ul class="project-points"><li>Analysed the Australian VET sector and the impact of Fee-Free TAFE on private RTO enrolment and competitive positioning</li><li>Conducted competitor analysis across 3 RTOs to map HBTA's market gap</li><li>Recommended a B2B niche strategy targeting SME (small and medium enterprise) workforce upskilling as the highest-viability growth path</li></ul></div>
+        <div class="project-stats"><div class="stat"><span class="stat-value">3</span><span class="stat-label">competitors mapped</span></div><div class="stat"><span class="stat-value">2</span><span class="stat-label">deliverables</span></div></div>
       </article>
 
       <article class="project reveal">
-        <div class="project-main">
-          <h3>Women in STEM Hackathon</h3>
-          <p class="project-org">Versent × Robogals × DSCubed</p>
-          <p class="project-desc">Built a centralised web platform for girls in Years 7–9 interested in STEM, with a dynamic opportunity map connecting students to local workshops and activities.</p>
-          <ul class="project-points">
-            <li>Designed and implemented an interactive discovery landing page</li>
-            <li>Built a dynamic opportunity map to connect Year 7–9 students with localised STEM workshops and events</li>
-          </ul>
-        </div>
-        <div class="project-stats">
-          <div class="stat"><span class="stat-value">Full-stack</span><span class="stat-label">web platform</span></div>
-          <div class="stat"><span class="stat-value">Hackathon</span><span class="stat-label">May 2026</span></div>
-        </div>
+        <div class="project-main"><h3>Women in STEM Hackathon</h3><p class="project-org">Versent × Robogals × DSCubed</p><p class="project-desc">Built a centralised web platform for girls in Years 7–9 interested in STEM, with a dynamic opportunity map connecting students to local workshops and activities.</p><ul class="project-points"><li>Designed and implemented an interactive discovery landing page</li><li>Built a dynamic opportunity map to connect Year 7–9 students with localised STEM workshops and events</li></ul></div>
+        <div class="project-stats"><div class="stat"><span class="stat-value">Full-stack</span><span class="stat-label">web platform</span></div><div class="stat"><span class="stat-value">Hackathon</span><span class="stat-label">May 2026</span></div></div>
       </article>
 
       <article class="project reveal">
-        <div class="project-main">
-          <h3>Hackiethon 2026</h3>
-          <p class="project-org">HackMelbourne</p>
-          <p class="project-desc">Built a fully functional AI-integrated game within a high-pressure hackathon window, collaborating across a 4-person team from scoping to deployment.</p>
-          <ul class="project-points">
-            <li>Engineered an interactive game environment through Pygame</li>
-            <li>Integrated a dynamic AI backend responding in real time to live user input</li>
-            <li>Scoped, built, and deployed a full prototype within the hackathon window</li>
-          </ul>
-        </div>
-        <div class="project-stats">
-          <div class="stat"><span class="stat-value">Pygame</span><span class="stat-label">game engine</span></div>
-          <div class="stat"><span class="stat-value">AI</span><span class="stat-label">integrated backend</span></div>
-        </div>
+        <div class="project-main"><h3>Hackiethon 2026</h3><p class="project-org">HackMelbourne</p><p class="project-desc">Built a fully functional AI-integrated game within a high-pressure hackathon window, collaborating across a 4-person team from scoping to deployment.</p><ul class="project-points"><li>Engineered an interactive game environment through Pygame</li><li>Integrated a dynamic AI backend responding in real time to live user input</li><li>Scoped, built, and deployed a full prototype within the hackathon window</li></ul></div>
+        <div class="project-stats"><div class="stat"><span class="stat-value">Pygame</span><span class="stat-label">game engine</span></div><div class="stat"><span class="stat-value">AI</span><span class="stat-label">integrated backend</span></div></div>
       </article>
 
       <article class="project reveal">
-        <div class="project-main">
-          <h3>Optiver Trad-a-thon</h3>
-          <p class="project-desc">A 2-hour simulated trading competition with 190+ teams, applying quantitative reasoning and fast-paced decision-making under pressure.</p>
-          <ul class="project-points">
-            <li>Placed 32nd out of 190+ competing teams</li>
-            <li>Applied quantitative reasoning across multiple simulated trading rounds</li>
-            <li>Operated under high-pressure, time-constrained conditions</li>
-          </ul>
-        </div>
-        <div class="project-stats">
-          <div class="stat"><span class="stat-value">32nd</span><span class="stat-label">of 190+ teams</span></div>
-          <div class="stat"><span class="stat-value">2 hr</span><span class="stat-label">live trading sim</span></div>
-        </div>
+        <div class="project-main"><h3>Optiver Trad-a-thon</h3><p class="project-desc">A 2-hour simulated trading competition with 190+ teams, applying quantitative reasoning and fast-paced decision-making under pressure.</p><ul class="project-points"><li>Placed 32nd out of 190+ competing teams</li><li>Applied quantitative reasoning across multiple simulated trading rounds</li><li>Operated under high-pressure, time-constrained conditions</li></ul></div>
+        <div class="project-stats"><div class="stat"><span class="stat-value">32nd</span><span class="stat-label">of 190+ teams</span></div><div class="stat"><span class="stat-value">2 hr</span><span class="stat-label">live trading sim</span></div></div>
       </article>
     </div>
   </section>
 
   <section id="skills" class="skills">
-    <div class="wrap">
-      <div class="section-head"><span class="tag">03</span><h2>Skills</h2></div>
-      <div class="skills-grid">
-        <div class="skill-group"><h4>Languages</h4><div class="pills"><span class="pill">Python</span><span class="pill">R</span><span class="pill">SQL</span><span class="pill">C</span></div></div>
-        <div class="skill-group"><h4>Libraries & Frameworks</h4><div class="pills"><span class="pill">pandas</span><span class="pill">scikit-learn</span><span class="pill">NumPy</span><span class="pill">matplotlib</span><span class="pill">React</span><span class="pill">Pygame</span></div></div>
-        <div class="skill-group"><h4>Tools</h4><div class="pills"><span class="pill">Jupyter</span><span class="pill">Git / GitHub</span><span class="pill">Streamlit</span><span class="pill">Posit Cloud</span><span class="pill">Claude Code</span><span class="pill">Google Maps API</span></div></div>
-      </div>
-    </div>
+    <div class="wrap"><div class="section-head"><span class="tag">03</span><h2>Skills</h2></div><div class="skills-grid">
+      <div class="skill-group"><h4>Languages</h4><div class="pills"><span class="pill">Python</span><span class="pill">R</span><span class="pill">SQL</span><span class="pill">C</span></div></div>
+      <div class="skill-group"><h4>Libraries & Frameworks</h4><div class="pills"><span class="pill">pandas</span><span class="pill">scikit-learn</span><span class="pill">NumPy</span><span class="pill">matplotlib</span><span class="pill">React</span><span class="pill">Pygame</span></div></div>
+      <div class="skill-group"><h4>Tools</h4><div class="pills"><span class="pill">Jupyter</span><span class="pill">Git / GitHub</span><span class="pill">Streamlit</span><span class="pill">Posit Cloud</span><span class="pill">Claude Code</span><span class="pill">Google Maps API</span></div></div>
+    </div></div>
   </section>
 
-  <footer id="contact" class="site-footer">
-    <div class="wrap footer-inner">
-      <div><h2>Let's talk</h2><p>Open to internships, case competitions, hackathons, early career programs and more!</p></div>
-      <div class="footer-links">
-        <a href="mailto:daniel.liujiaxuan@student.unimelb.edu.au">daniel.liujiaxuan@student.unimelb.edu.au</a>
-        <a href="https://github.com/dani3ll1u3745-sudo" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/dliujiaxuan" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="resume.pdf" download>Resume (PDF)</a>
-      </div>
-    </div>
-  </footer>
+  <footer id="contact" class="site-footer"><div class="wrap footer-inner"><div><h2>Let's talk</h2><p>Open to internships, case competitions, hackathons, early career programs and more!</p></div><div class="footer-links"><a href="mailto:daniel.liujiaxuan@student.unimelb.edu.au">daniel.liujiaxuan@student.unimelb.edu.au</a><a href="https://github.com/dani3ll1u3745-sudo" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/dliujiaxuan" target="_blank" rel="noopener">LinkedIn</a><a href="resume.pdf" download>Resume (PDF)</a></div></div></footer>
 
 <script src="script.js"></script>
 </body>
