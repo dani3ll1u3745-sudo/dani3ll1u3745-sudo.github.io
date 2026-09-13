@@ -23,7 +23,10 @@ code{font-family:var(--font-mono);font-size:.85em;background:var(--paper-raised)
 .logo{font-family:var(--font-mono);font-weight:600;letter-spacing:-.02em}.logo .cursor{color:var(--signal)}
 nav{display:flex;gap:28px;flex-wrap:wrap}nav a{font-family:var(--font-mono);font-size:.85rem;color:var(--sage);transition:color .15s ease}nav a:hover{color:var(--ink)}
 .header-controls{display:flex;align-items:center}
-.theme-toggle{border:1px solid var(--hairline);background:var(--paper-raised);color:var(--ink);width:42px;height:42px;border-radius:999px;cursor:pointer;display:grid;place-items:center;font:inherit}.theme-toggle:hover{border-color:var(--signal);transform:translateY(-1px)}.theme-icon{font-size:0;line-height:1;color:var(--ink)}.theme-icon::before{content:"◐";font-size:18px;line-height:1;color:var(--ink)}
+/* Theme control: show the sun icon only. */
+.theme-toggle{border:1px solid var(--hairline);background:var(--paper-raised);color:var(--ink);width:42px;height:42px;border-radius:999px;cursor:pointer;display:grid;place-items:center;font:inherit}.theme-toggle:hover{border-color:var(--signal);transform:translateY(-1px)}
+.theme-toggle .theme-icon{font-size:18px !important;line-height:1 !important;color:var(--ink)}
+.theme-toggle .theme-icon::before,.theme-toggle .theme-icon::after{content:none !important;display:none !important}
 .hero{position:relative;padding:110px 0 96px;border-bottom:1px solid var(--hairline);overflow:hidden}.hero-glow{position:absolute;top:-180px;left:50%;width:720px;height:720px;transform:translateX(-50%);background:radial-gradient(circle,var(--signal-dim) 0%,transparent 70%);filter:blur(40px);pointer-events:none;z-index:0;animation:drift 14s ease-in-out infinite}@keyframes drift{0%,100%{transform:translateX(-50%) translateY(0) scale(1)}50%{transform:translateX(-46%) translateY(30px) scale(1.08)}}.hero .wrap{position:relative;z-index:1}
 .eyebrow{font-family:var(--font-mono);font-size:.8rem;color:var(--signal);text-transform:uppercase;letter-spacing:.08em;margin:0 0 16px}.hero h1{font-family:var(--font-display);font-size:clamp(2.8rem,6.5vw,4.4rem);margin:0 0 22px;letter-spacing:-.01em}.hero-sub{max-width:540px;color:var(--sage);font-size:1.08rem}.hero-tagline{font-family:var(--font-display);font-style:italic;font-size:1.3rem;color:var(--ink);margin:0 0 24px;opacity:.92}.hero-links{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}.btn{font-family:var(--font-mono);font-size:.9rem;padding:11px 22px;border-radius:999px;border:1px solid var(--hairline);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--signal);color:#0B0C0F;border-color:var(--signal)}.btn-primary:hover{box-shadow:0 0 24px var(--signal-dim)}.btn-ghost{background:transparent;color:var(--ink)}.btn-ghost:hover{border-color:var(--signal)}
 .hero-widgets{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.widget{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--hairline);border-radius:999px;background:var(--paper-raised);color:var(--sage);font-family:var(--font-mono);font-size:.75rem}.widget-icon{color:var(--signal)}
@@ -41,5 +44,4 @@ nav{display:flex;gap:28px;flex-wrap:wrap}nav a{font-family:var(--font-mono);font
 [data-theme="light"] .site-header{background:rgba(245,244,239,.9)}
 [data-theme="light"] .project-points{color:#4d515b}
 [data-theme="light"] .btn-primary{color:#fff}
-[data-theme="light"] .theme-icon::before{color:#111}
-[data-theme="light"] .theme-toggle{color:#111}
+[data-theme="light"] .theme-toggle .theme-icon{color:#111}
