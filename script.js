@@ -17,7 +17,6 @@
   const q = (selector) => document.querySelector(selector);
   const qa = (selector) => [...document.querySelectorAll(selector)];
 
-  // Theme
   const themes = {
     dark: {
       "--paper": "#0B0C0F",
@@ -47,21 +46,21 @@
     root.dataset.theme = selected;
     localStorage.setItem(THEME_KEY, selected);
 
-    const toggle = q("#themeToggle");
-    if (toggle) {
-      const icon = toggle.querySelector(".theme-icon");
-      if (icon) icon.textContent = selected === "dark" ? "☀" : "◐";
+    // Keep exactly one sun symbol in the toggle in both themes.
+    qa(".theme-toggle").forEach((toggle) => {
+      toggle.innerHTML = '<span class="theme-icon">☀</span>';
       toggle.setAttribute("aria-label", selected === "dark" ? "Switch to light mode" : "Switch to dark mode");
       toggle.setAttribute("title", selected === "dark" ? "Switch to light mode" : "Switch to dark mode");
-    }
+    });
   }
 
   applyTheme(localStorage.getItem(THEME_KEY) || root.dataset.theme || "dark");
-  q("#themeToggle")?.addEventListener("click", () => {
-    applyTheme(root.dataset.theme === "dark" ? "light" : "dark");
+  qa(".theme-toggle").forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      applyTheme(root.dataset.theme === "dark" ? "light" : "dark");
+    });
   });
 
-  // Scroll reveal
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const revealEls = qa(".reveal");
 
@@ -79,7 +78,6 @@
     revealEls.forEach((el) => observer.observe(el));
   }
 
-  // Clock
   const clockText = q("#clockText");
   function updateClock() {
     if (!clockText) return;
@@ -96,7 +94,6 @@
   updateClock();
   window.setInterval(updateClock, 1000);
 
-  // Location
   const locationText = q("#locationText");
   const locationWidget = q("#locationWidget");
   function setLocationFallback() {
@@ -132,7 +129,6 @@
   }
   loadLocation();
 
-  // GitHub latest commit
   const ghCommits = q("#ghCommits");
   const repoUrl = "https://api.github.com/repos/dani3ll1u3745-sudo/dani3ll1u3745-sudo.github.io/commits?per_page=1";
 
@@ -184,7 +180,6 @@
   }
   loadGitHubCommit();
 
-  // Gallery / lightbox
   const lightbox = q("#lightbox");
   const lightboxImg = q("#lightboxImg");
   const galleryImages = qa(".gallery-item img").map((img) => {
@@ -247,7 +242,6 @@
     });
   });
 
-  // Resume check
   qa('a[href="resume.pdf"]').forEach((link) => {
     fetch("resume.pdf", { method: "HEAD", cache: "no-store" })
       .then((response) => {
@@ -259,7 +253,6 @@
       .catch(() => {});
   });
 
-  // CSS for the components introduced by the new HTML.
   const style = document.createElement("style");
   style.textContent = `
     .theme-toggle{border:1px solid var(--hairline);background:var(--paper-raised);color:var(--ink);width:42px;height:42px;border-radius:999px;cursor:pointer;display:inline-grid;place-items:center;font:inherit;transition:transform .2s ease,border-color .2s ease,background .2s ease}
