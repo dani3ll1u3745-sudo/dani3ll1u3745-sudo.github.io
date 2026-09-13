@@ -46,7 +46,6 @@
     root.dataset.theme = selected;
     localStorage.setItem(THEME_KEY, selected);
 
-    // Keep exactly one sun symbol in the toggle in both themes.
     qa(".theme-toggle").forEach((toggle) => {
       toggle.innerHTML = '<span class="theme-icon">☀</span>';
       toggle.setAttribute("aria-label", selected === "dark" ? "Switch to light mode" : "Switch to dark mode");
@@ -257,7 +256,7 @@
   style.textContent = `
     .theme-toggle{border:1px solid var(--hairline);background:var(--paper-raised);color:var(--ink);width:42px;height:42px;border-radius:999px;cursor:pointer;display:inline-grid;place-items:center;font:inherit;transition:transform .2s ease,border-color .2s ease,background .2s ease}
     .theme-toggle:hover{transform:translateY(-1px);border-color:var(--signal)}
-    .theme-icon{font-size:18px;line-height:1}
+    .theme-icon{font-size:18px;line-height:1;color:var(--ink)}
     .lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:5vh 5vw;background:rgba(0,0,0,.88);backdrop-filter:blur(8px)}
     .lightbox.open{display:flex}
     .lightbox-img{max-width:min(90vw,1200px);max-height:85vh;object-fit:contain;border-radius:8px;box-shadow:0 20px 70px rgba(0,0,0,.45)}
@@ -275,4 +274,10 @@
     [data-theme="light"] .hero-glow{opacity:.7}
   `;
   document.head.appendChild(style);
+
+  // Load the final CSS overrides after the site's main stylesheet so they win over its pseudo-element.
+  const fixLink = document.createElement("link");
+  fixLink.rel = "stylesheet";
+  fixLink.href = "theme-fix.css";
+  document.head.appendChild(fixLink);
 })();
