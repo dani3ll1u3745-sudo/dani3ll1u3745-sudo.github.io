@@ -1,0 +1,18 @@
+/* Theme toggle + compact 9News button fixes */
+.theme-toggle .theme-icon{
+  font-size:18px !important;
+  line-height:1 !important;
+  color:var(--ink) !important;
+}
+.theme-toggle .theme-icon::before{
+  content:none !important;
+  display:none !important;
+}
+[data-theme="light"] .theme-toggle .theme-icon{
+  color:#111 !important;
+}
+.news-panel .btn.btn-primary{
+  white-space:nowrap;
+  width:max-content;
+  max-width:100%;
+}
