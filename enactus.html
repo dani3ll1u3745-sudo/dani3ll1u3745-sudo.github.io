@@ -34,7 +34,7 @@
           <h1>EnAccess Maps</h1>
           <p class="enaccess-tagline">
             A web platform and developing mobile app improving accessibility for people with physical disabilities —
-            built with Google Maps APIs, Python, and React.
+            built with Google Maps APIs, TypeScript, and React.
           </p>
         </div>
         <div class="enaccess-badges">
@@ -43,7 +43,7 @@
       </div>
       <div class="enaccess-stack">
         <span class="pill">React</span>
-        <span class="pill">Python</span>
+        <span class="pill">TypeScript</span>
         <span class="pill">Google Maps API</span>
         <span class="pill">Mobile (in dev)</span>
       </div>
@@ -88,8 +88,7 @@
             <div class="feature-number">01</div>
             <div class="feature-content">
               <h3>Including link to 9News article</h3>
-              <p>Added a dedicated 9News panel to the project page with contextual text, a quote from the coverage, and a direct link to the article.</p>
-              <p>The panel highlights the project's focus on making accessibility information easier to discover and use when choosing venues.</p>
+              <p>Added a 9News panel with supporting text, a quote from the coverage, and a direct link to the article.</p>
             </div>
           </div>
 
@@ -97,10 +96,9 @@
             <div class="feature-number">02</div>
             <div class="feature-content">
               <h3>Update photo limit to 20 + multiple labels</h3>
-              <p>Fixed the photo upload flow in <code>caption-photo-step.tsx</code> and updated the relevant review flow in <code>Review-photo-upload.tsx</code>.</p>
-              <p><strong>Implementation:</strong> Made the photo limit configurable, updated the UI so the new limit is reflected correctly, and added support for selecting multiple accessibility labels.</p>
-              <p><strong>Post-update:</strong> Users can now upload up to 20 photos and add multiple labels. Selecting “Other” deselects all other labels and prevents any other labels from being shown. The first selected label is currently displayed — for example, if “moderate noise” and “no step-free entry” are selected, “moderate noise” is shown.</p>
-              <p><strong>Next steps:</strong> Show all selected labels when opening photos, add photos to full access details, prevent selecting contradictory labels, and add comments for each photo on the backend without displaying them yet.</p>
+              <p>Updated the photo upload flow to support up to 20 photos and multiple accessibility labels.</p>
+              <p><strong>Current:</strong> The limit is configurable, “Other” deselects other labels, and the first selected label is displayed.</p>
+              <p><strong>Next:</strong> Show all labels when opening photos, add photos to full access details, prevent contradictory labels, and add backend-only comments.</p>
             </div>
           </div>
 
