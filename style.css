@@ -1,49 +1,322 @@
-/* ===== Tokens ===== */
-:root{
-  --paper: #0B0C0F;
-  --ink: #F4F2ED;
-  --signal: #7C9CFF;
-  --signal-dim: rgba(124,156,255,0.35);
-  --sage: #8B93A1;
-  --hairline: #232630;
-  --paper-raised: #15171C;
-  --font-display: Georgia, "Iowan Old Style", "Times New Roman", serif;
-  --font-mono: "SF Mono", "Cascadia Code", "JetBrains Mono", Consolas, monospace;
-  --font-body: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-.wrap{max-width:880px;margin:0 auto;padding:0 24px}
-a{color:inherit;text-decoration:none}
-a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
-code{font-family:var(--font-mono);font-size:.85em;background:var(--paper-raised);padding:.15em .4em;border-radius:3px}
-.site-header{position:sticky;top:0;background:rgba(11,12,15,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--hairline);z-index:10}
-.header-inner{display:flex;justify-content:space-between;align-items:center;min-height:64px;gap:20px}
-.logo{font-family:var(--font-mono);font-weight:600;letter-spacing:-.02em}.logo .cursor{color:var(--signal)}
-nav{display:flex;gap:28px;flex-wrap:wrap}nav a{font-family:var(--font-mono);font-size:.85rem;color:var(--sage);transition:color .15s ease}nav a:hover{color:var(--ink)}
-.header-controls{display:flex;align-items:center}
-/* Theme control: show the sun icon only. */
-.theme-toggle{border:1px solid var(--hairline);background:var(--paper-raised);color:var(--ink);width:42px;height:42px;border-radius:999px;cursor:pointer;display:grid;place-items:center;font:inherit}.theme-toggle:hover{border-color:var(--signal);transform:translateY(-1px)}
-.theme-toggle .theme-icon{font-size:18px !important;line-height:1 !important;color:var(--ink)}
-.theme-toggle .theme-icon::before,.theme-toggle .theme-icon::after{content:none !important;display:none !important}
-.hero{position:relative;padding:110px 0 96px;border-bottom:1px solid var(--hairline);overflow:hidden}.hero-glow{position:absolute;top:-180px;left:50%;width:720px;height:720px;transform:translateX(-50%);background:radial-gradient(circle,var(--signal-dim) 0%,transparent 70%);filter:blur(40px);pointer-events:none;z-index:0;animation:drift 14s ease-in-out infinite}@keyframes drift{0%,100%{transform:translateX(-50%) translateY(0) scale(1)}50%{transform:translateX(-46%) translateY(30px) scale(1.08)}}.hero .wrap{position:relative;z-index:1}
-.eyebrow{font-family:var(--font-mono);font-size:.8rem;color:var(--signal);text-transform:uppercase;letter-spacing:.08em;margin:0 0 16px}.hero h1{font-family:var(--font-display);font-size:clamp(2.8rem,6.5vw,4.4rem);margin:0 0 22px;letter-spacing:-.01em}.hero-sub{max-width:540px;color:var(--sage);font-size:1.08rem}.hero-tagline{font-family:var(--font-display);font-style:italic;font-size:1.3rem;color:var(--ink);margin:0 0 24px;opacity:.92}.hero-links{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}.btn{font-family:var(--font-mono);font-size:.9rem;padding:11px 22px;border-radius:999px;border:1px solid var(--hairline);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--signal);color:#0B0C0F;border-color:var(--signal)}.btn-primary:hover{box-shadow:0 0 24px var(--signal-dim)}.btn-ghost{background:transparent;color:var(--ink)}.btn-ghost:hover{border-color:var(--signal)}
-.hero-widgets{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.widget{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--hairline);border-radius:999px;background:var(--paper-raised);color:var(--sage);font-family:var(--font-mono);font-size:.75rem}.widget-icon{color:var(--signal)}
-.section-head,.about-label{display:flex;align-items:baseline;gap:14px;margin-bottom:36px}.tag{font-family:var(--font-mono);font-size:.8rem;color:var(--signal);border:1px solid var(--hairline);border-radius:3px;padding:2px 7px}h2{font-family:var(--font-display);font-size:1.9rem;margin:0}
-.about{padding:80px 0;border-bottom:1px solid var(--hairline)}.about-grid{display:grid;grid-template-columns:200px 1fr;gap:40px}.about-body p{margin:0 0 18px;color:var(--sage)}.about-body p:last-child{margin-bottom:0}.about-content{display:grid;grid-template-columns:1fr 180px;gap:28px;align-items:start}.about-photo img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;border:1px solid var(--hairline)}
-.projects{padding:88px 0;border-bottom:1px solid var(--hairline)}.project{display:grid;grid-template-columns:1fr 220px;gap:32px;padding:36px;margin-bottom:28px;border:1px solid var(--hairline);border-radius:16px;background:var(--paper-raised);transition:border-color .25s ease,transform .25s ease}.project:hover{border-color:var(--signal-dim)}.project.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.project.reveal.in-view{opacity:1;transform:translateY(0)}.project h3{font-family:var(--font-display);font-size:1.5rem;margin:0 0 10px}.project-title-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.project-badge,.badge-active{font-family:var(--font-mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;border:1px solid var(--signal);color:var(--signal);border-radius:999px;padding:3px 8px}.project-org{font-family:var(--font-mono);font-size:.78rem;color:var(--signal);margin:0 0 12px}.project-desc{color:var(--sage);margin:0 0 16px}.project-points{margin:0 0 18px;padding-left:18px;color:#C7CAD3}.project-points li{margin-bottom:6px}.project-links{display:flex;gap:18px;flex-wrap:wrap}.project-links a{font-family:var(--font-mono);font-size:.85rem;color:var(--signal);border-bottom:1px solid transparent}.project-links a:hover{border-bottom-color:var(--signal)}.project-stats{background:rgba(124,156,255,.06);border:1px solid var(--hairline);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:16px;align-self:start}.stat{display:flex;flex-direction:column}.stat-value{font-family:var(--font-mono);font-size:1.5rem;font-weight:600;color:var(--ink)}.stat-label{font-family:var(--font-mono);font-size:.72rem;color:var(--sage);text-transform:uppercase;letter-spacing:.04em}.project-placeholder{opacity:.45}
-.skills{padding:80px 0;border-bottom:1px solid var(--hairline)}.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}.skill-group h4{font-family:var(--font-mono);font-size:.8rem;color:var(--sage);text-transform:uppercase;letter-spacing:.05em;margin:0 0 14px}.pills{display:flex;flex-wrap:wrap;gap:8px}.pill{font-family:var(--font-mono);font-size:.82rem;border:1px solid var(--hairline);border-radius:999px;padding:6px 14px;background:var(--paper-raised);color:var(--ink);transition:border-color .2s ease,color .2s ease}.pill:hover{border-color:var(--signal);color:var(--signal)}
-.photos{padding:80px 0;border-bottom:1px solid var(--hairline)}.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.gallery-item{position:relative;overflow:hidden;border:1px solid var(--hairline);border-radius:14px;background:var(--paper-raised);cursor:pointer;aspect-ratio:16/10}.gallery-item img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .3s ease}.gallery-item:hover img{transform:scale(1.03)}.gallery-overlay{display:none}.gallery-item.image-missing{opacity:.65}.gallery-item.image-missing img{background:var(--paper-raised)}
-.lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:5vh 5vw;background:rgba(0,0,0,.88);backdrop-filter:blur(8px)}.lightbox.open{display:flex}.lightbox-img{max-width:min(90vw,1200px);max-height:85vh;object-fit:contain;border-radius:8px;box-shadow:0 20px 70px rgba(0,0,0,.45)}.lightbox-close,.lightbox-prev,.lightbox-next{position:absolute;border:0;color:#fff;background:rgba(255,255,255,.12);width:44px;height:44px;border-radius:50%;cursor:pointer;font:inherit;font-size:28px}.lightbox-close{top:20px;right:24px}.lightbox-prev{left:24px;top:50%;transform:translateY(-50%)}.lightbox-next{right:24px;top:50%;transform:translateY(-50%)}.lightbox-close:hover,.lightbox-prev:hover,.lightbox-next:hover{background:rgba(255,255,255,.22)}body.lightbox-open{overflow:hidden}
-.enaccess-hero{padding:72px 0 64px;border-bottom:1px solid var(--hairline);background:linear-gradient(180deg,rgba(124,156,255,.06),transparent)}.back-link{font-family:var(--font-mono);font-size:.8rem;color:var(--sage);display:inline-block;margin-bottom:42px}.back-link:hover{color:var(--signal)}.enaccess-header{display:flex;justify-content:space-between;gap:30px;align-items:flex-start}.enaccess-hero h1{font-family:var(--font-display);font-size:clamp(2.7rem,6vw,4.2rem);margin:0 0 18px}.enaccess-tagline{max-width:700px;color:var(--sage);font-size:1.08rem}.enaccess-badges{padding-top:8px}.enaccess-stack{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}.enaccess-body{padding:80px 0}.enaccess-grid{display:grid;grid-template-columns:280px 1fr;gap:64px}.enaccess-overview h2,.enaccess-features h2{margin-bottom:22px}.enaccess-overview p{color:var(--sage);margin:0 0 18px}.enaccess-links{margin-top:28px}.feature-list{border-top:1px solid var(--hairline)}.feature-item{display:grid;grid-template-columns:48px 1fr;gap:20px;padding:26px 0;border-bottom:1px solid var(--hairline)}.feature-number{font-family:var(--font-mono);color:var(--signal);font-size:.8rem;padding-top:5px}.feature-content h3{font-family:var(--font-display);font-size:1.3rem;margin:0 0 8px}.feature-content p{color:var(--sage);margin:0}
-.news-panel{margin-top:30px;padding:24px;border:1px solid var(--hairline);border-radius:14px;background:var(--paper-raised)}.news-panel h3{font-family:var(--font-display);font-size:1.25rem;margin:0 0 12px}.news-panel p{margin-bottom:14px}.news-panel blockquote{margin:14px 0 20px;padding-left:16px;border-left:2px solid var(--signal);font-style:italic;color:var(--ink)}
-.site-footer{padding:72px 0 56px}.footer-inner{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}.footer-inner h2{margin-bottom:8px}.footer-inner p{color:var(--sage);margin:0;max-width:360px}.footer-links{display:flex;flex-direction:column;gap:8px;font-family:var(--font-mono);font-size:.9rem;text-align:right}.footer-links a:hover{color:var(--signal)}
-@media(max-width:720px){.header-inner{flex-wrap:wrap;padding-top:10px;padding-bottom:10px}.site-header{position:relative}nav{gap:12px}.about-grid{grid-template-columns:1fr}.about-content{grid-template-columns:1fr}.about-photo{max-width:180px}.project{grid-template-columns:1fr}.project-stats{flex-direction:row;flex-wrap:wrap}.skills-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.footer-inner{flex-direction:column;align-items:flex-start}.footer-links{text-align:left}.enaccess-header{flex-direction:column}.enaccess-grid{grid-template-columns:1fr;gap:42px}.lightbox-prev{left:10px}.lightbox-next{right:10px}}
-@media(prefers-reduced-motion:reduce){.hero-glow{animation:none}.project.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
-[data-theme="light"] .site-header{background:rgba(245,244,239,.9)}
-[data-theme="light"] .project-points{color:#4d515b}
-[data-theme="light"] .btn-primary{color:#fff}
-[data-theme="light"] .theme-toggle .theme-icon{color:#111}
-.articles{padding:88px 0}.article-list{display:flex;flex-direction:column;gap:18px}.article-item{display:block;padding:24px 28px;border:1px solid var(--hairline);border-radius:14px;background:var(--paper-raised);transition:border-color .2s ease,transform .2s ease}.article-item:hover{border-color:var(--signal-dim);transform:translateY(-2px)}.article-meta{font-family:var(--font-mono);font-size:.75rem;color:var(--signal)}.article-item h3{margin:6px 0 8px;font-family:var(--font-display);font-size:1.25rem}.article-item p{margin:0;color:var(--sage)}
-.article-item p.article-credit{margin-top:12px;font-family:var(--font-mono);font-size:.78rem;color:var(--signal)}
+/**
+ * Portfolio interactions
+ * - Scroll reveal
+ * - Dark/light theme toggle
+ * - Live Melbourne clock
+ * - GitHub latest-commit widget
+ * - Gallery lightbox + keyboard controls
+ * - Graceful handling of missing images / resume PDF
+ */
+
+(() => {
+  "use strict";
+
+  const root = document.documentElement;
+  const THEME_KEY = "daniel-portfolio-theme";
+
+  const q = (selector) => document.querySelector(selector);
+  const qa = (selector) => [...document.querySelectorAll(selector)];
+
+  const themes = {
+    dark: {
+      "--paper": "#0B0C0F",
+      "--ink": "#F4F2ED",
+      "--signal": "#7C9CFF",
+      "--signal-dim": "rgba(124,156,255,0.35)",
+      "--sage": "#8B93A1",
+      "--hairline": "#232630",
+      "--paper-raised": "#15171C",
+    },
+    light: {
+      "--paper": "#F5F4EF",
+      "--ink": "#17181B",
+      "--signal": "#526DCC",
+      "--signal-dim": "rgba(82,109,204,0.22)",
+      "--sage": "#626975",
+      "--hairline": "#D8D9DE",
+      "--paper-raised": "#FFFFFF",
+    },
+  };
+
+  function applyTheme(theme) {
+    const selected = theme === "light" ? "light" : "dark";
+    Object.entries(themes[selected]).forEach(([name, value]) => {
+      root.style.setProperty(name, value);
+    });
+    root.dataset.theme = selected;
+    localStorage.setItem(THEME_KEY, selected);
+
+    qa(".theme-toggle").forEach((toggle) => {
+      toggle.innerHTML = '<span class="theme-icon">☀</span>';
+      toggle.setAttribute("aria-label", selected === "dark" ? "Switch to light mode" : "Switch to dark mode");
+      toggle.setAttribute("title", selected === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    });
+  }
+
+  applyTheme(localStorage.getItem(THEME_KEY) || root.dataset.theme || "dark");
+  qa(".theme-toggle").forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      applyTheme(root.dataset.theme === "dark" ? "light" : "dark");
+    });
+  });
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const revealEls = qa(".reveal");
+
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    revealEls.forEach((el) => el.classList.add("in-view"));
+  } else {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+    revealEls.forEach((el) => observer.observe(el));
+  }
+
+  const clockText = q("#clockText");
+  function updateClock() {
+    if (!clockText) return;
+    const now = new Date();
+    const formatted = new Intl.DateTimeFormat("en-AU", {
+      timeZone: "Australia/Melbourne",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+      weekday: "short",
+    }).format(now);
+    clockText.textContent = `${formatted} · Melbourne`;
+  }
+  updateClock();
+  window.setInterval(updateClock, 1000);
+
+  const locationText = q("#locationText");
+  const locationWidget = q("#locationWidget");
+  function setLocationFallback() {
+    if (!locationText) return;
+    locationText.textContent = "Melbourne, Australia";
+    if (locationWidget) locationWidget.title = "Portfolio timezone: Australia/Melbourne";
+  }
+
+  function loadLocation() {
+    if (!locationText) return;
+    setLocationFallback();
+    if (!navigator.geolocation) return;
+
+    navigator.geolocation.getCurrentPosition(async (position) => {
+      try {
+        const { latitude, longitude } = position.coords;
+        const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${encodeURIComponent(latitude)}&lon=${encodeURIComponent(longitude)}&zoom=10`;
+        const response = await fetch(url, { headers: { Accept: "application/json" } });
+        if (!response.ok) throw new Error("Reverse geocoding failed");
+        const data = await response.json();
+        const address = data.address || {};
+        const city = address.city || address.town || address.municipality || address.suburb || "Current location";
+        const country = address.country || "";
+        locationText.textContent = [city, country].filter(Boolean).join(", ");
+      } catch {
+        setLocationFallback();
+      }
+    }, setLocationFallback, {
+      enableHighAccuracy: false,
+      timeout: 6000,
+      maximumAge: 15 * 60 * 1000,
+    });
+  }
+  loadLocation();
+
+  const ghCommits = q("#ghCommits");
+  const repoUrl = "https://api.github.com/repos/dani3ll1u3745-sudo/dani3ll1u3745-sudo.github.io/commits?per_page=1";
+
+  function relativeTime(dateString) {
+    const diff = Math.max(0, Date.now() - new Date(dateString).getTime());
+    const minute = 60 * 1000;
+    const hour = 60 * minute;
+    const day = 24 * hour;
+    if (diff < minute) return "just now";
+    if (diff < hour) {
+      const n = Math.floor(diff / minute);
+      return `${n} min${n === 1 ? "" : "s"} ago`;
+    }
+    if (diff < day) {
+      const n = Math.floor(diff / hour);
+      return `${n} hour${n === 1 ? "" : "s"} ago`;
+    }
+    const n = Math.floor(diff / day);
+    return `${n} day${n === 1 ? "" : "s"} ago`;
+  }
+
+  async function loadGitHubCommit() {
+    if (!ghCommits) return;
+    try {
+      const response = await fetch(repoUrl, {
+        headers: { Accept: "application/vnd.github+json" },
+        cache: "no-store",
+      });
+      if (!response.ok) throw new Error(`GitHub API ${response.status}`);
+      const commits = await response.json();
+      const latest = commits?.[0];
+      if (!latest) throw new Error("No commits found");
+
+      const message = (latest.commit?.message || "Latest commit").split("\n")[0].trim();
+      const date = latest.commit?.author?.date || latest.commit?.committer?.date;
+      ghCommits.textContent = date ? `GitHub · updated ${relativeTime(date)}` : `GitHub · ${message}`;
+
+      const widget = q("#ghWidget");
+      if (widget) {
+        widget.title = message;
+        widget.style.cursor = "pointer";
+        widget.addEventListener("click", () => {
+          window.open(latest.html_url || "https://github.com/dani3ll1u3745-sudo/dani3ll1u3745-sudo.github.io/commits/main", "_blank", "noopener");
+        });
+      }
+    } catch {
+      ghCommits.textContent = "GitHub · unavailable";
+    }
+  }
+  loadGitHubCommit();
+
+  // ===== Site view counter (CounterAPI, counterapi.dev) =====
+  // Set this to your CounterAPI workspace name. While it is empty the widget stays hidden.
+  const COUNTER_WORKSPACE = "daniel-site";
+  const COUNTER_NAME = "site-views";
+  const viewsWidget = q("#viewsWidget");
+  const viewsText = q("#viewsText");
+
+  function loadCounterLibrary() {
+    if (window.Counter) return Promise.resolve();
+    return new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = "https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js";
+      script.async = true;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+  }
+
+  async function loadViewCount() {
+    if (!viewsWidget || !viewsText || !COUNTER_WORKSPACE) return;
+    viewsWidget.hidden = false;
+    try {
+      await loadCounterLibrary();
+      const counter = new window.Counter({ workspace: COUNTER_WORKSPACE, timeout: 6000 });
+      // Count each visitor once per browser session, so refreshing doesn't inflate the number.
+      let alreadyCounted = false;
+      try { alreadyCounted = sessionStorage.getItem("viewCounted") === "1"; } catch {}
+      const result = alreadyCounted ? await counter.get(COUNTER_NAME) : await counter.up(COUNTER_NAME);
+      try { sessionStorage.setItem("viewCounted", "1"); } catch {}
+      const views = Number(result?.value);
+      if (!Number.isFinite(views)) throw new Error("No count returned");
+      viewsText.textContent = `${views.toLocaleString()} view${views === 1 ? "" : "s"}`;
+    } catch {
+      viewsWidget.hidden = true;
+    }
+  }
+  loadViewCount();
+
+  const lightbox = q("#lightbox");
+  const lightboxImg = q("#lightboxImg");
+  const galleryImages = qa(".gallery-item img").map((img) => {
+    let src = img.getAttribute("src") || "";
+    if (/\.jpg$/i.test(src)) {
+      src = src.replace(/\.jpg$/i, ".webp");
+      img.setAttribute("src", src);
+    }
+    return {
+      src,
+      alt: img.getAttribute("alt") || "",
+    };
+  });
+  let lightboxIndex = 0;
+
+  function renderLightbox() {
+    if (!lightbox || !lightboxImg || !galleryImages.length) return;
+    const item = galleryImages[lightboxIndex];
+    lightboxImg.src = item.src;
+    lightboxImg.alt = item.alt;
+  }
+
+  window.openLightbox = (index) => {
+    if (!lightbox || !galleryImages.length) return;
+    lightboxIndex = ((Number(index) || 0) % galleryImages.length + galleryImages.length) % galleryImages.length;
+    renderLightbox();
+    lightbox.classList.add("open");
+    document.body.classList.add("lightbox-open");
+  };
+
+  window.closeLightbox = () => {
+    if (!lightbox) return;
+    lightbox.classList.remove("open");
+    document.body.classList.remove("lightbox-open");
+  };
+
+  window.shiftLightbox = (delta) => {
+    if (!galleryImages.length) return;
+    lightboxIndex = (lightboxIndex + delta + galleryImages.length) % galleryImages.length;
+    renderLightbox();
+  };
+
+  lightbox?.addEventListener("click", (event) => {
+    if (event.target === lightbox) window.closeLightbox();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!lightbox?.classList.contains("open")) return;
+    if (event.key === "Escape") window.closeLightbox();
+    if (event.key === "ArrowLeft") window.shiftLightbox(-1);
+    if (event.key === "ArrowRight") window.shiftLightbox(1);
+  });
+
+  qa(".gallery-item img").forEach((img) => {
+    img.addEventListener("error", () => {
+      const item = img.closest(".gallery-item");
+      if (!item) return;
+      item.classList.add("image-missing");
+      img.alt = "Image not available yet";
+    });
+  });
+
+  qa('a[href="resume.pdf"]').forEach((link) => {
+    fetch("resume.pdf", { method: "HEAD", cache: "no-store" })
+      .then((response) => {
+        if (!response.ok) {
+          link.classList.add("missing-resource");
+          link.title = "Add resume.pdf to the repository to enable this link";
+        }
+      })
+      .catch(() => {});
+  });
+
+  const style = document.createElement("style");
+  style.textContent = `
+    .theme-toggle{border:1px solid var(--hairline);background:var(--paper-raised);color:var(--ink);width:42px;height:42px;border-radius:999px;cursor:pointer;display:inline-grid;place-items:center;font:inherit;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+    .theme-toggle:hover{transform:translateY(-1px);border-color:var(--signal)}
+    .theme-icon{font-size:18px;line-height:1;color:var(--ink)}
+    .lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:5vh 5vw;background:rgba(0,0,0,.88);backdrop-filter:blur(8px)}
+    .lightbox.open{display:flex}
+    .lightbox-img{max-width:min(90vw,1200px);max-height:85vh;object-fit:contain;border-radius:8px;box-shadow:0 20px 70px rgba(0,0,0,.45)}
+    .lightbox-close,.lightbox-prev,.lightbox-next{position:absolute;border:0;color:#fff;background:rgba(255,255,255,.12);width:44px;height:44px;border-radius:50%;cursor:pointer;font:inherit;font-size:28px}
+    .lightbox-close{top:20px;right:24px}.lightbox-prev{left:24px;top:50%;transform:translateY(-50%)}.lightbox-next{right:24px;top:50%;transform:translateY(-50%)}
+    .lightbox-close:hover,.lightbox-prev:hover,.lightbox-next:hover{background:rgba(255,255,255,.22)}
+    body.lightbox-open{overflow:hidden}
+    .gallery-item.image-missing{opacity:.62;cursor:default}
+    .gallery-item.image-missing img{min-height:180px;background:var(--paper-raised);object-fit:cover}
+    .gallery-item.image-missing .gallery-overlay span::after{content:" · image not uploaded";opacity:.8}
+    .missing-resource{opacity:.7;text-decoration-style:dotted!important}
+    [data-theme="light"] .site-header{background:rgba(245,244,239,.88)}
+    [data-theme="light"] .project-points{color:#4d515b}
+    [data-theme="light"] .btn-primary{color:#fff}
+    [data-theme="light"] .hero-glow{opacity:.7}
+  `;
+  document.head.appendChild(style);
+
+  // Load the final CSS overrides after the site's main stylesheet so they win over its pseudo-element.
+  const fixLink = document.createElement("link");
+  fixLink.rel = "stylesheet";
+  fixLink.href = "theme-fix.css";
+  document.head.appendChild(fixLink);
+})();
