@@ -179,6 +179,45 @@
   }
   loadGitHubCommit();
 
+  // ===== Site view counter (CounterAPI, counterapi.dev) =====
+  // Set this to your CounterAPI workspace name. While it is empty the widget stays hidden.
+  const COUNTER_WORKSPACE = "daniel-site";
+  const COUNTER_NAME = "site-views";
+  const viewsWidget = q("#viewsWidget");
+  const viewsText = q("#viewsText");
+
+  function loadCounterLibrary() {
+    if (window.Counter) return Promise.resolve();
+    return new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = "https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js";
+      script.async = true;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+  }
+
+  async function loadViewCount() {
+    if (!viewsWidget || !viewsText || !COUNTER_WORKSPACE) return;
+    viewsWidget.hidden = false;
+    try {
+      await loadCounterLibrary();
+      const counter = new window.Counter({ workspace: COUNTER_WORKSPACE, timeout: 6000 });
+      // Count each visitor once per browser session, so refreshing doesn't inflate the number.
+      let alreadyCounted = false;
+      try { alreadyCounted = sessionStorage.getItem("viewCounted") === "1"; } catch {}
+      const result = alreadyCounted ? await counter.get(COUNTER_NAME) : await counter.up(COUNTER_NAME);
+      try { sessionStorage.setItem("viewCounted", "1"); } catch {}
+      const views = Number(result?.value);
+      if (!Number.isFinite(views)) throw new Error("No count returned");
+      viewsText.textContent = `${views.toLocaleString()} view${views === 1 ? "" : "s"}`;
+    } catch {
+      viewsWidget.hidden = true;
+    }
+  }
+  loadViewCount();
+
   const lightbox = q("#lightbox");
   const lightboxImg = q("#lightboxImg");
   const galleryImages = qa(".gallery-item img").map((img) => {
