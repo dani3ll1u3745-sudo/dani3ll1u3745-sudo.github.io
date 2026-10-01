@@ -48,4 +48,4 @@ nav{display:flex;gap:28px;flex-wrap:wrap}nav a{font-family:var(--font-mono);font
 .articles{padding:88px 0}.article-list{display:flex;flex-direction:column;gap:18px}.article-item{display:block;padding:24px 28px;border:1px solid var(--hairline);border-radius:14px;background:var(--paper-raised);transition:border-color .2s ease,transform .2s ease}.article-item:hover{border-color:var(--signal-dim);transform:translateY(-2px)}.article-meta{font-family:var(--font-mono);font-size:.75rem;color:var(--signal)}.article-item h3{margin:6px 0 8px;font-family:var(--font-display);font-size:1.25rem}.article-item p{margin:0;color:var(--sage)}
 .article-item p.article-credit{margin-top:12px;font-family:var(--font-mono);font-size:.78rem;color:var(--signal)}
 .widget[hidden]{display:none}
-.project-title-row{flex-wrap:nowrap;margin-bottom:10px}.project-title-row h3{margin:0}.project-title-row .project-badge{flex-shrink:0;white-space:nowrap}
+.project-title-row{display:block;margin-bottom:10px}.project-title-row h3{display:inline;margin:0}.project-title-row .project-badge{display:inline-block;vertical-align:middle;position:relative;top:-3px;margin-left:12px;white-space:nowrap}
